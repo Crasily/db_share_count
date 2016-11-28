@@ -46,6 +46,13 @@ To install manually:
 1. Go to the Wordpress admin page
 1. Go to \"Plugins\" and scroll down until you can see DB Share Count
 
+= Activation =
+
+There are two ways to use DB Share Count:
+
+1. Add the `[get_dbsc_icons]` shortcode to any page or post.
+1. Make it part of your theme. Add the following code to any where in your theme: `<?php get_dbsc_icons(); ?>`
+
 
 == Frequently Asked Questions ==
 = Do you provide support? =

@@ -5,7 +5,7 @@ Plugin URI: https://www.danyabanya.com
 Description: Social share buttons with count
 Version: 0.1
 Author: Nathan Webb
-License: GPL
+License: GPLv2 or later
 */
 
 include 'dbsc_admin_options.php';

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: DB Share Count
-Plugin URI: https://www.danyabanya.com
+Plugin URI: https://github.com/Crasily/db_share_count
 Description: Social share buttons with count
 Version: 0.1
 Author: Nathan Webb

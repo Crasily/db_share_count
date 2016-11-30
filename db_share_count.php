@@ -15,25 +15,25 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 add_action('init', 'dbsc_init');
 
 function dbsc_init() {
-  add_action( 'wp_enqueue_scripts', 'ajax_dbsc_enqueue_scripts' );
-  add_shortcode( 'dbsc', 'get_dbsc_icons');
+  add_action( 'wp_enqueue_scripts', 'dbsc_ajax_enqueue_scripts' );
+  add_shortcode( 'dbsc', 'dbsc_get_icons');
   add_action( 'wp_ajax_nopriv_dbsc_get_counts', 'dbsc_get_counts' );
   add_action( 'wp_ajax_dbsc_get_counts', 'dbsc_get_counts' );
 }
 
-function get_min_count() {
+function dbsc_get_min_count() {
   $options = get_option('dbsc_settings');
   $minCount = isset($options['min_count_display']) && is_int($options['min_count_display']) ? $options['min_count_display'] : 10;
   return intval($minCount);
 }
 
-function get_dbsc_icons() {
+function dbsc_get_icons() {
   echo dbsc_icons();
 }
 
 function dbsc_icons() {
   $counts = dbsc_get_counts(true);
-  $minCount = get_min_count();
+  $minCount = dbsc_get_min_count();
   $dbsc_content = '<div class="dbsc_icons"><p>Like it? Share it&hellip;</p>';
   $dbsc_content .= dbsc_add_button('f', $counts, $minCount);
   $dbsc_content .= dbsc_add_button('p', $counts, $minCount);
@@ -44,13 +44,13 @@ function dbsc_icons() {
 	return $dbsc_content;
 }
 
-function ajax_dbsc_enqueue_scripts() {
+function dbsc_ajax_enqueue_scripts() {
 	wp_enqueue_style( 'dbsc', plugins_url( '/incl/dbsc_style.css', __FILE__ ) );
   wp_enqueue_script( 'dbsc', plugins_url( '/js/dbsc.js', __FILE__ ), array('jquery'), '1.0', true );
   wp_localize_script( 'dbsc', 'dbsc', array(
 		'ajax_url' => admin_url( 'admin-ajax.php' ),
     'post_id' => get_the_ID(),
-    'min_count_display' => get_min_count()
+    'min_count_display' => dbsc_get_min_count()
 	));
 }
 
@@ -89,11 +89,11 @@ function dbsc_add_button($site, $meta, $minCount = 10) {
   return $buttonHtml;
 }
 
-function respondJson($metajson) {
+function dbsc_respondJson($metajson) {
   echo json_encode($metajson['counts']);
 }
 
-function getCounts($url, &$countsDict) {
+function dbsc_getCounts($url, &$countsDict) {
   # facebook
   $countUrl = "https://graph.facebook.com/?id=" . $url;
   $rawdata = file_get_contents($countUrl);
@@ -180,7 +180,7 @@ function dbsc_get_counts($isPhp = false) {
     );
   }
   if ($meta['createdAt'] > (time() - 300)) {
-    respondJson($meta);
+    dbsc_respondJson($meta);
     die();
   }
   $countsDict = array(
@@ -195,14 +195,14 @@ function dbsc_get_counts($isPhp = false) {
   $schemas = array('http', 'https');
   foreach ($schemas as $schema) {
     $fullUrl = $schema . $endPart;
-    getCounts($fullUrl, $countsDict);
+    dbsc_getCounts($fullUrl, $countsDict);
   }
   $meta = array(
     'counts' => $countsDict,
     'createdAt' => time()
   );
   update_post_meta($_GET['post_id'], 'dbsc_meta', $meta);
-  respondJson($meta);
+  dbsc_respondJson($meta);
   die();
 }
 

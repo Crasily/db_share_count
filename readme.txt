@@ -50,8 +50,8 @@ To install manually:
 
 There are two ways to use DB Share Count:
 
-1. Add the `[get_dbsc_icons]` shortcode to any page or post.
-1. Make it part of your theme. Add the following code to any where in your theme: `<?php get_dbsc_icons(); ?>`
+1. Add the `[dbsc_get_icons]` shortcode to any page or post.
+1. Make it part of your theme. Add the following code to any where in your theme: `<?php dbsc_get_icons(); ?>`
 
 
 == Frequently Asked Questions ==

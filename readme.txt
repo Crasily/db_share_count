@@ -41,7 +41,7 @@ Via the Wordpress Admin page:
 
 To install manually:
 
-1. Download the db_share_count.zip from here.
+1. Download the db_share_count.zip from [github](https://github.com/Crasily/db_share_count/archive/master.zip).
 1. Extract the archive and upload the whole directory to your \"/wp-content/plugins/\" directory
 1. Go to the Wordpress admin page
 1. Go to \"Plugins\" and scroll down until you can see DB Share Count

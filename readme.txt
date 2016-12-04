@@ -26,7 +26,8 @@ With DB Share Count, you can:
 * Accurate - recover your share count by combining http and https share counts
 * Fast - the results are cached so the share icons load straight away
 
-DB Share Count is a free and open wordpress plugin.
+DB Share Count is a free and open wordpress plugin. Twitter shares are provided
+by the free service newsharecounts.com.
 
 == Installation ==
 You can either install this through the Wordpress admin page, or manually.
@@ -45,6 +46,13 @@ To install manually:
 1. Extract the archive and upload the whole directory to your \"/wp-content/plugins/\" directory
 1. Go to the Wordpress admin page
 1. Go to \"Plugins\" and scroll down until you can see DB Share Count
+
+Note for Twitter:
+Since Twitter no longer provides access to your Twitter share count,
+DB Share Count uses newsharecounts.com instead. If your Twitter share count
+isn't showing up, then you may need to go to http://www.newsharecounts.com/
+and enter your website's URL and sign in using your Twitter account to authorize
+access. That's all!
 
 = Activation =
 

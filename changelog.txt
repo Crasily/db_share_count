@@ -1,0 +1,12 @@
+# Change Log
+
+All notable changes to the project will be documented in this file.
+
+## [0.1.1]
+### Fixed
+ Updated facebook API
+
+## [0.1.0]
+### Added
+ - Initial release.
+

@@ -3,7 +3,7 @@
 Plugin Name: DB Share Count
 Plugin URI: https://github.com/Crasily/db_share_count
 Description: Social share buttons with count
-Version: 0.1
+Version: 0.1.1
 Author: Nathan Webb
 License: GPLv2 or later
 */
@@ -98,8 +98,8 @@ function dbsc_getCounts($url, &$countsDict) {
   $countUrl = "https://graph.facebook.com/?id=" . $url;
   $rawdata = file_get_contents($countUrl);
   $data = json_decode($rawdata, true);
-  if(array_key_exists("shares", $data)) {
-    $newCount = $data["shares"];
+  if(array_key_exists("share", $data)) {
+    $newCount = $data["share"]["share_count"];
   } else {
     $newCount = 0;
   }

@@ -3,7 +3,7 @@
 Plugin Name: DB Share Count
 Plugin URI: https://github.com/Crasily/db_share_count
 Description: Social share buttons with count
-Version: 0.1.1
+Version: 0.1.2
 Author: Nathan Webb
 License: GPLv2 or later
 */
@@ -98,7 +98,7 @@ function dbsc_getCounts($url, &$countsDict) {
   $countUrl = "https://graph.facebook.com/?id=" . $url;
   $rawdata = file_get_contents($countUrl);
   $data = json_decode($rawdata, true);
-  if(array_key_exists("share", $data)) {
+  if(is_array($data) && array_key_exists("share", $data)) {
     $newCount = $data["share"]["share_count"];
   } else {
     $newCount = 0;
@@ -113,7 +113,7 @@ function dbsc_getCounts($url, &$countsDict) {
   $urlTwitter = "http://public.newsharecounts.com/count.json?url=" . $url;
   $dTwitter = file_get_contents($urlTwitter);
   $data = json_decode($dTwitter, true);
-  if(array_key_exists("count", $data)) {
+  if(is_array($data) && array_key_exists("count", $data)) {
     $newCount = $data["count"];
   } else {
     $newCount = 0;
@@ -141,8 +141,8 @@ function dbsc_getCounts($url, &$countsDict) {
   $urlStumble = "http://www.stumbleupon.com/services/1.01/badge.getinfo?url=" . $url;
   $dStumble = file_get_contents($urlStumble);
   $data = json_decode($dStumble, true);
-  if(array_key_exists("count", $data) and
-       array_key_exists("views", $data["count"])) {
+  if(is_array($data) && array_key_exists("count", $data) &&
+       is_array($data["count"]) && array_key_exists("views", $data["count"])) {
     $newCount = $data["count"]["views"];
   } else {
     $newCount = 0;
@@ -156,7 +156,7 @@ function dbsc_getCounts($url, &$countsDict) {
   $dPinterest = file_get_contents($urlPinterest);
   $dPinterest = preg_replace("/receiveCount\(({.*})\)$/", "$1", $dPinterest);
   $data = json_decode($dPinterest, true);
-  if(array_key_exists("count", $data)) {
+  if(is_array($data) && array_key_exists("count", $data)) {
     $newCount = $data["count"];
   } else {
     $newCount = 0;

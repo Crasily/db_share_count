@@ -2,9 +2,14 @@
 
 All notable changes to the project will be documented in this file.
 
+## [0.1.2]
+### Fixed
+ - readme.txt incorrect shortcode
+ - Added extra error checking for bad responses
+
 ## [0.1.1]
 ### Fixed
- Updated facebook API
+ - Updated facebook API
 
 ## [0.1.0]
 ### Added

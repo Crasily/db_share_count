@@ -58,7 +58,7 @@ access. That's all!
 
 There are two ways to use DB Share Count:
 
-1. Add the `[dbsc_get_icons]` shortcode to any page or post.
+1. Add the `[dbsc]` shortcode to any page or post.
 1. Make it part of your theme. Add the following code to any where in your theme: `<?php dbsc_get_icons(); ?>`
 
 

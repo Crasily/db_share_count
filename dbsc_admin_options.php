@@ -18,13 +18,13 @@ function dbsc_section_text() {
 
 function dbsc_min_count_display() {
   $options = get_option('dbsc_settings');
-  $minCount = get_min_count();
-  echo "<input type='number' name='dbsc_settings[dbsc_min_count_display]' value='{$minCount}'/>";
+  $minCount = dbsc_get_min_count();
+  echo "<input type='number' name='dbsc_settings[min_count_display]' value='{$minCount}'/>";
 }
 
 function dbsc_options_validate($input) {
   $options = get_option('dbsc_settings');
-  $options[dbsc_min_count_display] = absint($input[dbsc_min_count_display]);
+  $options[min_count_display] = absint($input[min_count_display]);
   return $options;
 }
 

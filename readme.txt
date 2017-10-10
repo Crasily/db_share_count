@@ -2,7 +2,7 @@
 Contributors: nathanwebb
 Tags: social share count, social share, share counter, social icons
 Requires at least: 4.0
-Tested up to: 4.6
+Tested up to: 4.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -67,6 +67,9 @@ There are two ways to use DB Share Count:
 Sure! You can raise an issue on the [DB Share Count Github page](https://github.com/Crasily/db_share_count)
 
 == Changelog ==
+= 0.1.3 =
+* Fixed options was not displaying correct min_count
+
 = 0.1.2 =
 * Fixed readme.txt incorrect shortcode
 * Added extra error checking for bad responses

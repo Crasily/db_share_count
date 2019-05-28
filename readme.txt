@@ -12,7 +12,7 @@ Social share buttons with count
 == Description ==
 DB Social Share count has been designed to be a simple and effective social share counter. We needed a solution when migrating to https, as the old share counts weren't visible anymore. DB Social Share count solved this problem.
 
-[See it in action at Go Science Girls](https://gosciencegirls.com/dirt-backyard-science-experiment/)
+[See it in action at Go Science Girls](https://gosciencegirls.com.au/dirt-backyard-science-experiment/)
 
 With DB Share Count, you can:
 

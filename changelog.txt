@@ -2,6 +2,14 @@
 
 All notable changes to the project will be documented in this file.
 
+## [0.1.7]
+### Fixed
+ - Temporarily removed newsharecount for twitter
+
+## [0.1.6]
+### Fixed
+ - The example url was changed to gosciencekids.com
+
 ## [0.1.3]
 ### Fixed
  - Options was not displaying correct min_count

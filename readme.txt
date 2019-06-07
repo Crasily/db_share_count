@@ -12,7 +12,7 @@ Social share buttons with count
 == Description ==
 DB Social Share count has been designed to be a simple and effective social share counter. We needed a solution when migrating to https, as the old share counts weren't visible anymore. DB Social Share count solved this problem.
 
-[See it in action at Go Science Girls](https://gosciencegirls.com.au/dirt-backyard-science-experiment/)
+[See it in action at Go Science Kids](https://gosciencekids.com/dirt-backyard-science-experiment/)
 
 With DB Share Count, you can:
 
@@ -67,6 +67,15 @@ There are two ways to use DB Share Count:
 Sure! You can raise an issue on the [DB Share Count Github page](https://github.com/Crasily/db_share_count)
 
 == Changelog ==
+= 0.1.8 =
+* updated pinterest url
+
+= 0.1.7 =
+* Disabled twitter count temporarily
+
+= 0.1.6 =
+* changed the example URL to gosciencekids.com
+
 = 0.1.3 =
 * Fixed options was not displaying correct min_count
 

@@ -3,7 +3,7 @@
 Plugin Name: DB Share Count
 Plugin URI: https://github.com/Crasily/db_share_count
 Description: Social share buttons with count
-Version: 0.1.3
+Version: 0.1.8
 Author: Nathan Webb
 License: GPLv2 or later
 */
@@ -110,17 +110,17 @@ function dbsc_getCounts($url, &$countsDict) {
   }
 
   # twitter
-  $urlTwitter = "http://public.newsharecounts.com/count.json?url=" . $url;
-  $dTwitter = file_get_contents($urlTwitter);
-  $data = json_decode($dTwitter, true);
-  if(is_array($data) && array_key_exists("count", $data)) {
-    $newCount = $data["count"];
-  } else {
-    $newCount = 0;
-  }
-  if($newCount != $countsDict["t"]) {
-    $countsDict["t"] += $newCount;
-  }
+#  $urlTwitter = "http://public.newsharecounts.com/count.json?url=" . $url;
+#  $dTwitter = file_get_contents($urlTwitter);
+#  $data = json_decode($dTwitter, true);
+#  if(is_array($data) && array_key_exists("count", $data)) {
+#    $newCount = $data["count"];
+#  } else {
+#    $newCount = 0;
+#  }
+#  if($newCount != $countsDict["t"]) {
+#    $countsDict["t"] += $newCount;
+#  }
 
   # google plus
   $post_body = '[{"method":"pos.plusones.get","id":"p","params":{"nolog":true,"id":"'.rawurldecode($url).'","source":"widget","userId":"@viewer","groupId":"@self"},"jsonrpc":"2.0","key":"p","apiVersion":"v1"}]';
@@ -152,7 +152,7 @@ function dbsc_getCounts($url, &$countsDict) {
   }
 
   # Pinterest
-  $urlPinterest = "http://api.pinterest.com/v1/urls/count.json?url=" . $url;
+  $urlPinterest = "https://widgets.pinterest.com/v1/urls/count.json?url=" . $url;
   $dPinterest = file_get_contents($urlPinterest);
   $dPinterest = preg_replace("/receiveCount\(({.*})\)$/", "$1", $dPinterest);
   $data = json_decode($dPinterest, true);
@@ -179,7 +179,7 @@ function dbsc_get_counts($isPhp = false) {
       "createdAt" => 0,
     );
   }
-  if ($meta['createdAt'] > (time() - 300)) {
+  if ($meta['createdAt'] > (time() - 3000)) {
     dbsc_respondJson($meta);
     die();
   }

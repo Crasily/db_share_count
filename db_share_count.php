@@ -3,7 +3,7 @@
 Plugin Name: DB Share Count
 Plugin URI: https://github.com/Crasily/db_share_count
 Description: Social share buttons with count
-Version: 0.2.1
+Version: 0.2.2
 Author: Nathan Webb
 License: GPLv2 or later
 */
@@ -30,10 +30,11 @@ function dbsc_get_icons() {
 function dbsc_icons() {
   $counts = dbsc_get_counts_for_php();
   $minCount = dbsc_get_min_count();
+  $permalink = get_the_permalink();
   $dbsc_content = '<div class="dbsc_icons"><p>Like it? Share it&hellip;</p>';
-  $dbsc_content .= dbsc_add_button('f', $counts, $minCount);
-  $dbsc_content .= dbsc_add_button('p', $counts, $minCount);
-  $dbsc_content .= dbsc_add_button('t', $counts, $minCount);
+  $dbsc_content .= dbsc_add_button_facebook($counts, $minCount, $permalink);
+  $dbsc_content .= dbsc_add_button_pinterest($counts, $minCount, $permalink);
+  $dbsc_content .= dbsc_add_button_twitter($counts, $minCount, $permalink);
   $dbsc_content .= '</div>';
 	return $dbsc_content;
 }

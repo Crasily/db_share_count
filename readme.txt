@@ -67,6 +67,9 @@ There are two ways to use DB Share Count:
 Sure! You can raise an issue on the [DB Share Count Github page](https://github.com/Crasily/db_share_count)
 
 == Changelog ==
+= 0.2.2 =
+* bug fixes
+
 = 0.2.1 =
 * removed gplus and stumbleupon
 

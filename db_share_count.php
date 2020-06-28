@@ -38,8 +38,6 @@ function dbsc_icons() {
   $dbsc_content .= dbsc_add_button('f', $counts, $minCount);
   $dbsc_content .= dbsc_add_button('p', $counts, $minCount);
   $dbsc_content .= dbsc_add_button('t', $counts, $minCount);
-  $dbsc_content .= dbsc_add_button('g', $counts, $minCount);
-  $dbsc_content .= dbsc_add_button('s', $counts, $minCount);
   $dbsc_content .= '</div>';
 	return $dbsc_content;
 }

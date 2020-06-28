@@ -3,7 +3,7 @@
 Plugin Name: DB Share Count
 Plugin URI: https://github.com/Crasily/db_share_count
 Description: Social share buttons with count
-Version: 0.1.8
+Version: 0.1.9
 Author: Nathan Webb
 License: GPLv2 or later
 */

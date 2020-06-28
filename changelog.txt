@@ -2,6 +2,15 @@
 
 All notable changes to the project will be documented in this file.
 
+
+## [0.1.9]
+### Fixed
+ - removed gplus and stumbleupon
+
+## [0.1.8]
+### Fixed
+ - updated pinterest url
+
 ## [0.1.7]
 ### Fixed
  - Temporarily removed newsharecount for twitter

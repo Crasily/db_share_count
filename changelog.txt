@@ -2,18 +2,17 @@
 
 All notable changes to the project will be documented in this file.
 
-
-## [0.1.10]
-### Fixed
+## [0.2.1]
+###
  - removed gplus and stumbleupon
+
+## [0.2.0]
+### Added
+ - added admin options
 
 ## [0.1.9]
 ### Fixed
  - increased timeout for cache from 5 minutes to 50 minutes
-
-## [0.1.8]
-### Fixed
- - updated pinterest url
 
 ## [0.1.7]
 ### Fixed

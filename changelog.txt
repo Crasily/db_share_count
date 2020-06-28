@@ -3,9 +3,13 @@
 All notable changes to the project will be documented in this file.
 
 
-## [0.1.9]
+## [0.1.10]
 ### Fixed
  - removed gplus and stumbleupon
+
+## [0.1.9]
+### Fixed
+ - increased timeout for cache from 5 minutes to 50 minutes
 
 ## [0.1.8]
 ### Fixed
